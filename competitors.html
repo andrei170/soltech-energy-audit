@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Competitor Analysis · SolTech Energy · AG1 Consulting</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--ink:#e6edf3;--mut:#9aa7b4;--line:#2a3340;--accent:#2f81f7;
+  --good:#3fb950;--bad:#f85149;--gradF:#f85149;--gradD:#e8702a;--gradC:#d29922;--gradB:#3fb950;--gradA:#2ea043;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--mut);font-weight:600}
+header{padding:46px 0 28px;border-bottom:1px solid var(--line);background:radial-gradient(1200px 400px at 70% -10%,rgba(47,129,247,.18),transparent)}
+h1{font-size:30px;font-weight:800;margin:10px 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mut);font-size:15px}
+.hero{display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:center;margin:34px 0 8px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.gradecard{border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center;position:relative;overflow:hidden}
+.gc-F{background:linear-gradient(160deg,#2a1410,#1c2330)}.gc-D{background:linear-gradient(160deg,#2a1c10,#1c2330)}
+.gc-C{background:linear-gradient(160deg,#2a2410,#1c2330)}.gc-B{background:linear-gradient(160deg,#102a1a,#1c2330)}
+.bigletter{font-size:96px;font-weight:900;line-height:1;position:relative}
+.bl-F{color:var(--gradF);text-shadow:0 0 40px rgba(248,81,73,.45)}
+.bl-D{color:var(--gradD);text-shadow:0 0 40px rgba(232,112,42,.45)}
+.bl-C{color:var(--gradC);text-shadow:0 0 40px rgba(210,153,34,.45)}
+.score100{font-size:18px;color:var(--mut);margin-top:6px;position:relative}
+.heroread h2{font-size:21px;font-weight:800;margin-bottom:10px}
+.heroread p{color:var(--mut);font-size:15.5px}
+.heroread .tag{display:inline-block;margin-top:14px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--ink);background:var(--panel)}
+section{padding:34px 0;border-bottom:1px solid var(--line)}
+.h{font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.rname{font-weight:600;font-size:15px}
+.bar{height:7px;background:#0b0f15;border-radius:99px;margin-top:9px;overflow:hidden}
+.fill{height:100%;border-radius:99px}
+.badge{font-weight:800;font-size:15px;min-width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#0d1117}
+.gF{background:var(--gradF)}.gD{background:var(--gradD)}.gC{background:var(--gradC)}.gB{background:var(--gradB);color:#06210f}.gA{background:var(--gradA);color:#06210f}
+.sc{font-size:12px;color:var(--mut);margin-top:3px}
+.flag{background:linear-gradient(160deg,#2a1410,#161b22);border:1px solid #6f2a1f;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.flag .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--bad);font-weight:700;margin-bottom:8px}
+.win{background:linear-gradient(160deg,#0f2417,#161b22);border:1px solid #1f6f3a;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.win .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--good);font-weight:700;margin-bottom:8px}
+.warn{background:linear-gradient(160deg,#2a2410,#161b22);border:1px solid #6f5a1f;border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.warn .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--gradC);font-weight:700;margin-bottom:8px}
+.flag p,.win p,.warn p{color:var(--mut);font-size:14.5px;margin-bottom:9px}
+.flag p:last-child,.win p:last-child,.warn p:last-child{margin-bottom:0}
+.flag b,.win b,.warn b{color:var(--ink)}
+.flag ul,.win ul,.warn ul{margin:0 0 9px 20px;color:var(--mut);font-size:14.5px}
+.flag li,.win li,.warn li{margin-bottom:6px}
+.code{background:#0b0f15;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:12px 0;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;line-height:1.85;color:var(--mut);overflow-x:auto}
+.code .ph{color:#ff9d94;font-weight:700}.code .ok{color:#84e0a8;font-weight:700}.code .c{color:#5b6672}
+.cmp{width:100%;border-collapse:collapse;font-size:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.cmp th{text-align:left;padding:11px 14px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);border-bottom:1px solid var(--line);font-weight:700}
+.cmp td{padding:11px 14px;border-bottom:1px solid var(--line);color:var(--mut);vertical-align:top}
+.cmp tr:last-child td{border-bottom:none}.cmp td b{color:var(--ink)}.cmp tr.you td{background:#241a12}
+.cmp .yes{color:var(--good);font-weight:700}.cmp .no{color:var(--bad);font-weight:700}
+.opp{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.opp{grid-template-columns:1fr}}
+.ocard{background:linear-gradient(160deg,#0f2417,#161b22);border:1px solid #1f6f3a;border-radius:14px;padding:20px;text-align:center}
+.ocard .lab{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut)}
+.ocard .big{font-size:30px;font-weight:900;color:var(--good);margin:8px 0 2px}
+.ocard .small{font-size:13px;color:var(--mut)}
+.oppnote{color:var(--mut);font-size:14px;margin-top:14px}.oppnote b{color:var(--ink)}
+.arrow{display:flex;align-items:center;justify-content:center;gap:18px;margin:6px 0 2px;flex-wrap:wrap}
+.pill{font-size:60px;font-weight:900;line-height:1}
+.pill.from-F{color:var(--gradF)}.pill.from-D{color:var(--gradD)}.pill.from-C{color:var(--gradC)}
+.pill.to{color:var(--gradA)}
+.pilllab{font-size:12px;color:var(--mut);text-align:center;text-transform:uppercase;letter-spacing:.1em}
+.ar{font-size:34px;color:var(--mut)}
+ul.road{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){ul.road{grid-template-columns:1fr}}
+ul.road li{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:11px 14px;font-size:14.5px}
+.road2 li{border-left-color:var(--good)}
+.cta{text-align:center;padding:40px 0 56px}
+.cta h2{font-size:22px;font-weight:800;margin-bottom:8px}
+.cta p{color:var(--mut);font-size:15px}
+footer{color:var(--mut);font-size:12.5px;text-align:center;padding:22px 0 40px;line-height:1.7}
+.gscale{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 26px 20px;margin-top:16px}
+.gscale .gtitle{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);font-weight:700;margin-bottom:26px;text-align:center}
+.gtrack{position:relative;height:14px;border-radius:8px;background:linear-gradient(90deg,#f85149 0%,#f85149 18%,#e3833c 34%,#d4a72c 52%,#7ec46a 74%,#3fb950 100%);margin:0 4px}
+.gmark{position:absolute;top:-46px;transform:translateX(-50%);text-align:center;white-space:nowrap}
+.gmark .gm-lab{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);font-weight:700}
+.gmark .gm-val{font-size:19px;font-weight:900;line-height:1.15}
+.gmark:after{content:"";position:absolute;left:50%;top:100%;width:2px;height:22px;transform:translateX(-50%);background:currentColor;opacity:.75}
+.gmark.now{color:var(--bad)}.gmark.now .gm-val{color:var(--bad)}
+.gmark.proj{color:var(--good)}.gmark.proj .gm-val{color:var(--good)}
+.gmark.proj{top:auto;bottom:-52px}
+.gmark.proj:after{top:auto;bottom:100%}
+.gdot{position:absolute;top:50%;width:16px;height:16px;border-radius:50%;transform:translate(-50%,-50%);border:3px solid #0d1117}
+.gdot.now{background:var(--bad)}.gdot.proj{background:var(--good)}
+.gticks{display:flex;justify-content:space-between;margin:66px 4px 0;font-size:11px;letter-spacing:.08em;color:var(--mut);font-weight:700}
+@media(max-width:620px){.gmark .gm-lab{font-size:9px}.gmark .gm-val{font-size:16px}}
+</style></head><body>
+<nav class="agnav"><div class="inner"><a href="assets.html">All Assets</a><a href="./">Audit</a><a href="competitors.html" class="on">Competitors</a><a href="https://andrei170.github.io/soltech-energy-demo/" class="ext" target="_blank" rel="noopener">Concept Site &#8599;</a></div></nav>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Competitor Analysis &middot; Solar &middot; San Jacinto Valley, Riverside County</div>
+    <div class="sub">Prepared for Moises &middot; SolTech Energy &middot; 25 September 2026 &middot; AG1 Consulting</div>
+    <h1>Your Rivals Publish 39,000 Words Each. You Publish 430. But Not One Of Them Speaks Spanish.</h1>
+
+    <div class="hero">
+      <div class="gradecard gc-F">
+        <div class="bigletter bl-F" style="font-size:44px">430</div>
+        <div class="score100">words on your entire site, against roughly 39,000 on each rival</div>
+      </div>
+      <div class="heroread">
+        <h2>We are not going to soften this. On published content you are the smallest site in your own market by a factor of about ninety.</h2>
+        <p><b>But two things in this comparison are genuinely in your favour, and both are cheap to take.</b></p>
+        <p><b>Nobody in this market publishes anything in Spanish.</b> Not one page, not one line, on any of the three
+        firms we checked. <b>And one of the two biggest is running analytics that stopped collecting data in July
+        2023</b> &mdash; they have been flying blind for over three years.</p>
+        <div class="tag">Read from each firm's own site on 25 September 2026 by following its own navigation</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="h">The Comparison</div>
+    <div style="overflow-x:auto">
+    <table class="cmp">
+      <tr>
+        <th></th>
+        <th>Option One Solar<br><span style="font-weight:400;opacity:.7">San Jacinto Valley</span></th>
+        <th>Barnes Solar<br><span style="font-weight:400;opacity:.7">family-owned, est. 2009</span></th>
+        <th>Progressive Energy<br><span style="font-weight:400;opacity:.7">Hemet</span></th>
+        <th class="you">SolTech Energy</th>
+      </tr>
+      <tr><td><b>Pages we could read</b></td><td class="yes">30</td><td class="yes">28</td><td>&mdash;</td><td class="no"><b>5</b></td></tr>
+      <tr><td><b>Words published</b></td><td class="yes">~39,000</td><td class="yes">~38,000</td><td>&mdash;</td><td class="no"><b>430</b></td></tr>
+      <tr><td><b>Analytics</b></td><td class="yes">GA4 live</td><td class="no">Universal Analytics only &mdash; dead since July 2023</td><td>&mdash;</td><td class="no"><b>None found</b></td></tr>
+      <tr><td><b>Tag Manager</b></td><td class="yes">GTM live</td><td class="no">None found</td><td>&mdash;</td><td class="no"><b>None found</b></td></tr>
+      <tr><td><b>Meta pixel</b></td><td class="no">Not found</td><td class="no">Not found</td><td>&mdash;</td><td class="no"><b>Not found</b></td></tr>
+      <tr><td><b>Tappable phone numbers</b></td><td>2</td><td class="no">1</td><td>&mdash;</td><td class="no"><b>0</b></td></tr>
+      <tr><td><b>Enquiry forms</b></td><td class="yes">14</td><td class="yes">28</td><td>&mdash;</td><td class="no"><b>0</b></td></tr>
+      <tr><td><b>LocalBusiness markup</b></td><td class="yes">Yes</td><td class="no">Organization only</td><td>&mdash;</td><td class="you"><b>Yes</b></td></tr>
+      <tr><td><b>Any Spanish content</b></td><td class="no">None found</td><td class="no">None found</td><td class="no">None found</td><td class="you"><b>You speak it</b></td></tr>
+    </table>
+    </div>
+    <div class="tag" style="margin-top:12px">Progressive Energy Solutions is shown as a dash on the measured rows because we checked its homepage and sitemap
+    for Spanish content but did not run the full page-by-page measurement on it &mdash; a dash means not measured, never zero. Page counts are capped at
+    the first 30 pages reached from each homepage and are a floor, not a total. "Not found" records what a read returned on that date and is not proof
+    of absence.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="h">Finding 1 &mdash; Nobody In This Market Publishes A Word Of Spanish</div>
+    <div class="code">
+  Checked each firm's homepage and published sitemap for:
+    "espa&ntilde;ol" / "se habla" / "hablamos" / a /es/ URL / lang="es"
+
+    Option One Solar         <span class="ph">none found</span>
+    Barnes Solar             <span class="ph">none found</span>   (7 sub-sitemaps, no Spanish URL)
+    Progressive Energy       <span class="ph">none found</span>   (6 sub-sitemaps, no Spanish URL)
+
+    SolTech Energy           <span class="ok">you and your crew speak it</span>
+    </div>
+    <div class="win">
+      <div class="lab">This is the most valuable thing you own and it is currently invisible</div>
+      <p><b>You are selling solar in Riverside County, where a very large share of households speak Spanish at
+      home.</b> Solar is a considered purchase involving finance agreements, roof access, permits and a twenty-year
+      warranty. <b>It is exactly the kind of decision people prefer to make in the language they are most comfortable
+      in</b> &mdash; especially when someone is asking them to sign a finance document.</p>
+      <p><b>Every competitor we checked is invisible to that buyer.</b> Not because they chose to be. Because it did
+      not occur to anyone.</p>
+      <p><b>Your website currently does not say you speak Spanish either.</b> So right now you have the advantage and
+      none of the benefit. <b>A Spanish version of your main pages, and a single line on the homepage, would make you
+      the only firm in this comparison that person can read.</b></p>
+      <p class="tag">We have flagged in your concept site that any Spanish copy we draft must be reviewed by a native
+      speaker before it goes anywhere near a live site. Bad Spanish would do more harm than none.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="h">Finding 2 &mdash; Barnes Solar Has Been Flying Blind Since July 2023</div>
+    <div class="code">
+  Barnes Solar (barnessolar.com)
+
+    Analytics found     <span class="ph">UA-223483055-1</span>
+                        <span class="ph">UA-87883415-1</span>
+    GA4                 <span class="ph">none found</span>
+    Tag Manager         <span class="ph">none found</span>
+    Enquiry forms       <span class="ok">28</span>
+    Tappable numbers    1
+    Homepage title      "Orange County Solar Companies..."
+    </div>
+    <div class="warn">
+      <div class="lab">Universal Analytics stopped processing new data on 1 July 2023</div>
+      <p><b>Those UA- tags are Google's old analytics product. Google switched it off for good in July 2023.</b> It is
+      still sitting in their pages doing nothing. They have <b>28 enquiry forms and no working way of knowing which one
+      anybody fills in</b>, or which of their 28 pages produced it.</p>
+      <p><b>There is a second thing worth noticing.</b> Their homepage title leads with <b>"Orange County"</b>, not
+      Hemet or San Jacinto. They serve this valley but they are not really of it. <b>You are.</b> On local work that is
+      a genuine difference, and it is the one thing a national or regional installer can never take from you.</p>
+      <p><b>The point for you is not that they are weak. It is how cheap the measurement gap is to close.</b> You have
+      no analytics at all, which is worse than theirs. But you are starting from nothing and can install the current
+      thing correctly in an afternoon, while they have a dead tag nobody has noticed in three years.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="h">Finding 3 &mdash; Option One Is The Real Competitor, And Here Is What They Do</div>
+    <div class="code">
+  Option One Solar (optiononesolar.com)
+
+    Pages               <span class="ok">30</span>
+    Words               <span class="ok">~39,000</span>
+    GA4 + Tag Manager   <span class="ok">both live</span>
+    Enquiry forms       <span class="ok">14</span>
+    FAQ structured data <span class="ok">present</span>
+    Meta pixel          <span class="ph">not found</span>
+    Spanish             <span class="ph">not found</span>
+
+  Their biggest pages:
+    3,027  /customer-support
+    2,875  /incentives
+    2,314  /commercial-solar-carports
+    2,226  /commercial-solar
+    </div>
+    <div class="warn">
+      <div class="lab">Look at what their two biggest pages are about</div>
+      <p><b>Their single largest page is customer support, and the second is incentives.</b> Not "why choose us".
+      <b>They have worked out that the two things a solar buyer is actually anxious about are what happens after the
+      install, and whether the tax credits and rebates are real.</b></p>
+      <p><b>You have no page on either.</b> You have no service pages at all &mdash; no install page, no battery page,
+      no repair page, no commercial page. <b>That is five pages that would each be doing work for you, and none of them
+      requires you to be a writer.</b> You explain this to customers on the phone every week.</p>
+      <p><b>They also have two commercial pages and you have none</b>, which is worth raising because commercial solar
+      is bigger tickets and fewer competitors.</p>
+      <p><b>What they do not have: a Meta pixel, or a word of Spanish.</b></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="h">What We Would Do, In Order</div>
+    <ul class="road">
+      <li><b>Put a phone number and a form on the site.</b> You currently have neither, anywhere. Everything else on
+      this list is worthless until someone can contact you. <b>This is the single most urgent item in either
+      document.</b></li>
+      <li><b>Install analytics.</b> You have none. An afternoon's work, and until it is done every other decision here
+      is guesswork.</li>
+      <li><b>Write five service pages</b> &mdash; install, battery, repair and service, commercial, and what happens
+      after the install. Option One's biggest page is customer support; that is not an accident.</li>
+      <li><b>Add a page on incentives and rebates.</b> Their second biggest page. It is the question every solar buyer
+      asks and nobody local has answered it in Spanish.</li>
+      <li><b>Then do the Spanish version</b>, reviewed by a native speaker. This is the one thing on the list that
+      makes you the only firm in the market rather than a better version of one.</li>
+      <li><b>Build town pages for the valley</b> &mdash; San Jacinto, Hemet, Menifee, Perris, Moreno Valley. You
+      currently have no page for San Jacinto, which is where you are.</li>
+      <li><b>Remove the /cart page.</b> It is left over from the template and you are not selling anything from a
+      basket.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <h2>You are a long way behind on the site, and standing on the one piece of ground nobody else has touched.</h2>
+    <p>The gap in content is real and we are not going to pretend otherwise. But it is all buildable, and the Spanish
+    advantage is yours whether you use it or not.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    Prepared by Andrei Givero &middot; AG1 Consulting &middot; 25 September 2026. Every figure was read directly from each named firm's own
+    website on 25 September 2026 by following that site's own navigation, and is reproducible. Word counts exclude script, style and comment
+    blocks. <b>Competitor word totals include some non-page endpoints reached during the crawl and should be read as an order of magnitude
+    rather than an exact figure; the per-page figures quoted individually are exact.</b> <b>Page counts are capped at the first 30 pages
+    reached from each homepage and are a floor, not a total.</b> <b>Progressive Energy Solutions was checked only for Spanish content, on its
+    homepage and sitemap, and was not measured on the other rows; a dash means not measured, never zero.</b> <b>The Spanish finding is based on
+    searching each firm's homepage and published sitemap for Spanish-language markers and finding none; it is not proof that no Spanish exists
+    anywhere on those sites.</b> <b>Items recorded as "not found" describe what a static read returned on that date and are not proof of
+    absence.</b> <b>We make no claim about the share of Spanish-speaking households in Riverside County beyond describing it as large, and no
+    census figure has been checked.</b> <b>No Google Business Profile, ranking, review count, traffic, licence status or revenue figure has been
+    measured for any firm, and no advertising spend is known for any of them.</b> <b>No enquiry, booked job, ranking or revenue outcome is
+    forecast or promised.</b>
+  </div>
+</footer>
+</body></html>
